@@ -1,0 +1,7 @@
+select distinct ?c (count(?c) AS ?num)
+where{
+  ?a rdf:type ?c.
+  filter regex(?c, <%= keyword %>, "i")
+}
+order by DESC(?num)
+limit 30

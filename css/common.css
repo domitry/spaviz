@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    font-size: 80px;
+    font-family: 'Candal', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+p{
+    font-size: 20px;
+}
+
+form{
+    margin: 10px 0px;
+}
+
+select, input{
+    width: 80%;
+    font-size: 20px;
+}
+
+#st_footer > svg{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#st_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(59,134,134);
+}
+
+#logo{
+    text-align: center;
+}
+
+#st_bg > svg{
+    position: relative;
+    display: block;
+    top: 50px;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+}
+
+#st_header{
+    height: 50px;
+}
+
+#st_body{
+    border: solid 4px #000;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: rgba(200, 200, 200, 0.8);
+}
+
+#st_wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#st_main{
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+/*    background-color: rgb(255, 230, 230);*/
+}
+
+#select, #viz, #phase2, #loading, #phase3{
+    display: none;
+}
+
+#loading_icon{
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+}
+
+#viz_bg > svg{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#viz_bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(59,134,134);
+}

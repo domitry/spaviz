@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SPA_VIZ</title>
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="./builded.js"></script>
+  </head>
+  <body>
+    <div id="start" class="panel">
+      <div id="st_bg">
+        <svg></svg>
+      </div>
+      <div id="st_wrapper">
+        <div id="st_main">
+          <div id="st_header">
+          </div>
+          <div id="logo">
+            <h1> SPA_VIZ </h1>
+          </div>
+          <div id="st_body">
+            <div id="loading">
+              <image src="./images/ring.gif" id="loading_icon">
+            </div>
+            <div id="phase1">
+              <p>
+                Choose END POINT to start 
+              </p>
+              <form>
+                <select id="endpoints">
+                </select>
+              </form>
+            </div>
+            <div id="phase2">
+              <p>
+                Input the keyword to search.
+              </p>
+              <form>
+                <input type="text" name="text_query", id="keyword_box">
+              </form>
+            </div>
+            <div id="phase3">
+              <p>
+                Select categories:
+              </p>
+              <form>
+                <select id="categories" size="5" style="width: 100%">
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="viz" class="panel">
+      <div id="st_bg">
+        <svg></svg>
+      </div>
+    </div>
+  </body>
+</html>

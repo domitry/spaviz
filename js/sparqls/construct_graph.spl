@@ -1,0 +1,6 @@
+select distinct *
+where{
+  ?a rdf:type <%= typename %>.
+}
+offset <%= offset %>
+limit <%= number %>
