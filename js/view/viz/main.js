@@ -231,10 +231,32 @@ module.exports = function(config){
         force.on("tick", function() {
             g.selectAll(".link")
                 .selectAll("line")
-                .attr("x1", function(d) { return d.source.x; })
-                .attr("y1", function(d) { return d.source.y; })
-                .attr("x2", function(d) { return d.target.x; })
-                .attr("y2", function(d) { return d.target.y; });
+                .attr("dx_", function(d){ return d.target.x - d.source.x;})
+                .attr("dy_", function(d){ return d.target.y - d.source.y;})
+                .attr("len", function(d){
+                    var s = d3.select(this);
+                    return Math.sqrt(Math.pow(s.attr("dx_"),2) + Math.pow(s.attr("dy_"),2));
+                })
+                .attr("udx_", function(d){
+                    var s = d3.select(this);
+                    return s.attr("dx_")/s.attr("len");
+                })
+                .attr("udy_", function(d){
+                    var s = d3.select(this);
+                    return s.attr("dy_")/s.attr("len");
+                })
+                .attr("x1", function(d) {
+                    return d.source.x + 70*d3.select(this).attr("udx_");
+                })
+                .attr("y1", function(d) {
+                    return d.source.y + 70*d3.select(this).attr("udy_");
+                })
+                .attr("x2", function(d) {
+                    return d.target.x - 70*d3.select(this).attr("udx_");
+                })
+                .attr("y2", function(d) {
+                    return d.target.y - 70*d3.select(this).attr("udy_");
+                });
 
             g.selectAll(".link")
                 .selectAll("text")
