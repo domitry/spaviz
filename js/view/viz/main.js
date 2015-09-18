@@ -9,6 +9,23 @@ module.exports = function(config){
             .scaleExtent([0.1, 10])
             .on("zoom", zoomed);
 
+    svg.append("defs").append("marker")
+        .attr({
+            id: "arrow",
+            viewBox: '0 0 10 10',
+            refX: 8,
+            refY: 5,
+            markerWidth: 8,
+            markerHeight: 8,
+            orient: "auto"
+        })
+        .append('path')
+        .attr({
+            d: 'M10 5 0 0 0 10Z',
+            stroke: 'none',
+            fill: 'black'
+        });
+
     parent_g.call(zoom);
 
     parent_g.append("rect")
@@ -256,7 +273,8 @@ module.exports = function(config){
                 })
                 .attr("y2", function(d) {
                     return d.target.y - 70*d3.select(this).attr("udy_");
-                });
+                })
+                .attr("marker-end", "url(#arrow)");
 
             g.selectAll(".link")
                 .selectAll("text")
