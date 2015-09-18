@@ -50,6 +50,7 @@ module.exports = function(config){
         });
     });
 
+    // Set path from the source (sample node) to the target
     var path4query = [];
     function addNode2Path(node){
         path4query.push(node);
@@ -79,7 +80,6 @@ module.exports = function(config){
                 origin: true
             };
             nodes = [center];
-            ///// dirty.
             addNode2Path(center);
         }
 
@@ -264,6 +264,7 @@ module.exports = function(config){
                 });
         });
 
+        // fetch all data from db
         d3.select("#deploy_button")
             .on("mouseover", function(){
                 d3.select(this).style("background-color", "#d9d9d9");
