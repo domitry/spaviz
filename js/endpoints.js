@@ -1,6 +1,16 @@
 /*global require, module, _, d3*/
 
 module.exports = {
-    dbpedia: "http://dbpedia.org/sparql",
-    "dbpedia-jp": "http://ja.dbpedia.org/sparql"
+    dbpedia: {
+        mode: "ordinal",
+        uri: "http://dbpedia.org/sparql"
+    },
+    "dbpedia-jp": {
+        mode: "bif",
+        uri: "http://ja.dbpedia.org/sparql"
+    },
+    "nibb": {
+        mode: "bif",
+        uri: "http://sparql.nibb.ac.jp/sparql"
+    }
 };

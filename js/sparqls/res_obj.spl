@@ -1,0 +1,10 @@
+select ?res ?obj ?obj_label ?res_label
+where{
+  <%= nodename %> ?res ?obj.
+  optional {
+    ?obj rdfs:label ?obj_label.
+    ?res rdfs:label ?res_label.
+  }
+}
+offset 0
+limit 1000

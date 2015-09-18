@@ -4,8 +4,8 @@
     <title>SPA_VIZ</title>
     <link href="./css/common.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <script src="./builded.js"></script>
   </head>
   <body>
@@ -50,13 +50,23 @@
                 </select>
               </form>
             </div>
+            <div id="error">
+              <p>
+                Some error has occured.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div id="viz" class="panel">
-      <div id="st_bg">
+      <div id="viz_bg">
         <svg></svg>
+      </div>
+      <div id="viz_footer">
+        <div id="viz_footer_text">
+        </div>
+        <div id="deploy_button">Fetch</div>
       </div>
     </div>
   </body>

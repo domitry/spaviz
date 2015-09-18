@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?c ?label (count(?c) AS ?num)
+WHERE {
+  ?a rdf:type ?c.
+  ?c rdfs:label ?label.
+  ?label bif:contains '<%= keyword %>'.
+}
+order by DESC(?num)
+limit 10

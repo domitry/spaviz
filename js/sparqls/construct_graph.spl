@@ -1,6 +1,6 @@
 select distinct *
 where{
-  ?a rdf:type <%= typename %>.
+  ?sample_uri rdf:type <%= typename %>.
 }
 offset <%= offset %>
 limit <%= number %>

@@ -1,0 +1,8 @@
+select ?a <%= last_alphabet %>
+where{
+  ?a rdf:type <%= typename %> .
+  optional{
+    <%= queries %>
+  }
+}
+limit 1000

@@ -1,0 +1,4 @@
+select distinct ?label
+where{
+  <%= keyword %> rdfs:label ?label.
+}

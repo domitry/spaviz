@@ -15,7 +15,12 @@ module.exports = {
         }).join("&");
 
         console.log("code", code);
+        console.log("uri", endpoint);
 
         d3.csv(url, callback);
+    },
+    getLastWordOfURI: function(uri){
+        var arr = uri.split("\/");
+        return arr[arr.length-1];
     }
 };
