@@ -42,6 +42,7 @@ module.exports = {
         var links = this.config.links;
         var center_node_uri = center.uri;
         var force = this.config.force;
+        center.unfolded = true;
         
         this.exec(this.config.end_point, require("../../sparqls/res_obj.js"), {
             nodename: "<" + center_node_uri + ">"

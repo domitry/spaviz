@@ -1,4 +1,5 @@
 /*global require, module, _, d3*/
+var util = require("../../util.js");
 
 ///////////////////////////////////////////////////////////////////////
 // Graph module
@@ -140,9 +141,9 @@ module.exports = {
             node.append("circle")
                 .attr({r: 70, cx: 0, cy: 0})
                 .on("mousedown", function(d){
-                    sparql_module.unfold(d, 10, function(){
-                        graph_module.update();
-                    });
+                    if(!d.unfolded && util.isURI(d.uri)){
+                        sparql_module.unfold(d, 10, function(){graph_module.update();});
+                    }
                 })
                 .on("contextmenu", function(){
                     var pos = d3.mouse(document.body);
