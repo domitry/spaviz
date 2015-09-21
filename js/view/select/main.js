@@ -166,7 +166,7 @@ module.exports = {
             appendButton(d3.select("#phase3"), "NEXT", function(){
                 var selected = d3.select("#categories")[0][0].value;
                 d3.select("#start").style("display", "none");
-                require("../viz/main.js")(selected);
+                require("../viz/init.js")();
             });
         })();
     }
