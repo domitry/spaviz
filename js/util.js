@@ -23,6 +23,10 @@ module.exports = {
         var arr = uri.split("\/");
         return arr[arr.length-1];
     },
+    isURI: function(str){
+        if(str.match(/http/g) != null)return true;
+        else return false;
+    },
     // data: {hoge: function(){}, nya: function(){},...}
     createMenu: function(parent, pos, data){
         var root = parent.append("g");
