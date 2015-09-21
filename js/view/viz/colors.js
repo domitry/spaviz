@@ -22,7 +22,11 @@ module.exports = {
             .attr({
                 fill: "rgb(168,219,168)",
                 stroke: "#000",
-                "stroke-width": 3
+                "stroke-width": 3,
+                "stroke-dasharray": function(d){
+                    if(d.uri == "more")return "10,10";
+                    return "";
+                }
             })
             .on("mouseover", function(){
                 var node = d3.select(this);

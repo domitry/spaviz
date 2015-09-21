@@ -48,23 +48,38 @@ module.exports = {
             nodename: "<" + center_node_uri + ">"
         }, function(err, arr){
             var d_theta = (2*Math.PI)/arr.length;
+
+            if(arr.length > limit){
+                var more = arr.slice(limit, arr.length);
+                arr = arr.slice(0, limit);
+                arr.push({obj_label: "", obj: "more", res_label: "", res: "_"});
+            }
             
             _.each(arr, function(row, i){
                 var node = {
                     display_name: (row.obj_label == "" ? util.getLastWordOfURI(row.obj) : row.obj_label),
+                    name: row.obj_label,
                     uri: row.obj,
                     x: center.x+100*Math.cos(i*d_theta),
                     y: center.y+100*Math.sin(i*d_theta),
                     unfolded: false
                 };
-                
-                nodes.push(node);
-                links.push({
-                    source: center,
-                    target: node,
+
+                var link = {
+                    display_name: (row.res_label == "" ? util.getLastWordOfURI(row.res) : row.res_label),
+                    name: row.res_label,
                     uri: row.res,
-                    display_name: (row.res_label == "" ? util.getLastWordOfURI(row.res) : row.res_label)
+                    source: center,
+                    target: node
+                };
+
+                _.each([node, link], function(obj){
+                    if(obj.display_name.length > 10)
+                        obj.display_name = obj.display_name.slice(0, 10) + "...";
                 });
+
+                nodes.push(node);
+                links.push(link);
             });
 
             if(typeof callback != "undefined")
