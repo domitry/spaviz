@@ -16,5 +16,9 @@ module.exports = {
     "dbpedia-jp": {
         mode: "bif",
         uri: "http://ja.dbpedia.org/sparql"
+    },
+    "biomodels": {
+	mode: "ordinal",
+	uri: "https://www.ebi.ac.uk/rdf/services/biomodels/sparql"
     }
 };
