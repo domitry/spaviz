@@ -1,6 +1,12 @@
 /*global require, module, _, d3*/
-var select = require("./view/select/main");
+var init = require("./view/init.js");
 
 window.onload = function(){
-    select.begin();
+    // show a sample visualization as the background animation
+    var default_config = {
+	end_point: "http://dbpedia.org/sparql",
+	typename: "http://dbpedia.org/class/yago/Proteins"
+    };
+
+    init(default_config);
 };

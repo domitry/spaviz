@@ -9,60 +9,12 @@
     <script src="./builded.js"></script>
   </head>
   <body>
-    <div id="start" class="panel">
-      <div id="st_bg">
+    <div id="viz">
+      <div id="viz_contents">
         <svg></svg>
       </div>
-      <div id="st_wrapper">
-        <div id="st_main">
-          <div id="st_header">
-          </div>
-          <div id="logo">
-            <h1> SPA_VIZ </h1>
-          </div>
-          <div id="st_body">
-            <div id="loading">
-              <image src="./images/ring.gif" id="loading_icon">
-            </div>
-            <div id="phase1">
-              <p>
-                Choose END POINT to start 
-              </p>
-              <form>
-                <select id="endpoints">
-                </select>
-              </form>
-            </div>
-            <div id="phase2">
-              <p>
-                Input the keyword to search.
-              </p>
-              <form>
-                <input type="text" name="text_query" id="keyword_box" value="Protein">
-              </form>
-            </div>
-            <div id="phase3">
-              <p>
-                Select categories:
-              </p>
-              <form>
-                <select id="categories" size="5" style="width: 100%">
-                </select>
-              </form>
-            </div>
-            <div id="error">
-              <p>
-                Some error has occured.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="viz" class="panel">
-      <div id="viz_bg">
-        <svg></svg>
-      </div>
+      <div id="viz_bg"></div>
+      <div id="dialog_wrapper"></div>
     </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
 /*global require, module, _, d3*/
 var util = require("../util.js");
 
-module.exports = function(){
+module.exports = function(config_){
     // initialize #viz
     d3.select("#viz").style("display", "block");
     
@@ -68,11 +68,8 @@ module.exports = function(){
             .size([window.innerWidth, window.innerHeight]);
 
     var config = {
-        end_point: (function(){
-            var selected = d3.select("#endpoints")[0][0].value;
-            return require("../../endpoints.js")[selected].uri;
-        })(),
-        typename: d3.select("#categories")[0][0].value,
+        end_point: config_.end_point,
+        typename: config_.typename,
         float_g: float_g,
         force: force,
         nodes: [],
