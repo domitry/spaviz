@@ -1,3 +1,5 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
 select distinct ?c (count(?c) AS ?num)
 where{
   ?a rdf:type ?c.
