@@ -35,7 +35,7 @@ function appendButton(parent, str, callback){
 module.exports = {
     begin: function(){
         //// set options of selector ////
-        var endpoints = require("../../endpoints.js");
+        var endpoints = require("../endpoints.js");
         _.each(endpoints, function(obj, name){
             d3.select("#endpoints")
                 .append("option")
@@ -118,16 +118,16 @@ module.exports = {
             });
 
             appendButton(d3.select("#phase2"), "NEXT", function(){
-                var util = require("../../util.js");
+                var util = require("../util.js");
                 var keyword = d3.select("#keyword_box")[0][0].value;
                 var selected = d3.select("#endpoints")[0][0].value;
                 var uri = endpoints[selected].uri;
 
                 var code = (function(){
                     if(endpoints[selected].mode == "bif"){
-                        return require("../../sparqls/search_bif.js");
+                        return require("../sparqls/search_bif.js");
                     }else{
-                        return require("../../sparqls/search.js");
+                        return require("../sparqls/search.js");
                     }
                 })();
 

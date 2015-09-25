@@ -1,5 +1,5 @@
 /*global require, module, _, d3*/
-var util = require("../../util.js");
+var util = require("../util.js");
 
 module.exports = function(){
     // initialize #viz

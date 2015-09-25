@@ -1,10 +1,10 @@
 /*global require, module, _, d3*/
-var util = require("../../util.js");
+var util = require("../util.js");
 
 module.exports = {
     init: function(config){
         this.config = config;
-        var code = require("../../sparqls/construct_graph.js");
+        var code = require("../sparqls/construct_graph.js");
         
         this.exec(this.config.end_point, code, {
             typename: "<" + this.config.typename + ">",
@@ -37,14 +37,14 @@ module.exports = {
         util.sendQuery(uri, compiled, callback);
     },
     unfold: function(center, limit, callback){
-        var code = require("../../sparqls/res_obj.js");
+        var code = require("../sparqls/res_obj.js");
         var nodes = this.config.nodes;
         var links = this.config.links;
         var center_node_uri = center.uri;
         var force = this.config.force;
         center.unfolded = true;
         
-        this.exec(this.config.end_point, require("../../sparqls/res_obj.js"), {
+        this.exec(this.config.end_point, require("../sparqls/res_obj.js"), {
             nodename: "<" + center_node_uri + ">"
         }, function(err, arr){
             var d_theta = (2*Math.PI)/arr.length;
@@ -97,7 +97,7 @@ module.exports = {
                 d3.select(this).style("background-color", "#f7f7f7");
             })
             .on("mousedown", function(){
-                var code = require("../../sparqls/fetch.js");
+                var code = require("../sparqls/fetch.js");
                 var typename = "<" + d3.select("#categories")[0][0].value + ">";
                 
                 var links = this.config.force.links();
