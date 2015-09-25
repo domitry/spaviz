@@ -5,5 +5,6 @@ where{
   ?a rdf:type ?c.
   filter regex(?c, <%= keyword %>, "i")
 }
+group by ?c
 order by DESC(?num)
 limit 30
