@@ -3,10 +3,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>SPA_VIZ</title>
     <link href="./css/common.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <script src="./builded.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div id="viz">
@@ -14,7 +14,19 @@
         <svg></svg>
       </div>
       <div id="viz_bg"></div>
-      <div id="dialog_wrapper"></div>
+      <div id="dialog_wrapper">
+	<div class="dialog">
+	  <h1>Welcome to SPAVIZ</h1>
+	  <div id="search_wrapper">
+	    <input type="text">
+	    <div id="search_button_div">
+	      <img src="./images/search.png">
+	    </div>
+	  </div>
+	  <p>
+	    <small><a href="#tutorial"> begin tutorial </a> / <a href="#advanced"> advanced form </a></small>
+	  </p>
+	</div>
     </div>
   </body>
 </html>

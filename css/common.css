@@ -1,16 +1,13 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1{
-    font-size: 80px;
-    font-family: 'Candal', sans-serif;
+    /*font-family: 'Candal', sans-serif;*/
     letter-spacing: 0.05em;
-}
-
-p{
-    font-size: 20px;
+    margin-bottom: 1.5em;
 }
 
 form{
@@ -62,4 +59,46 @@ select, input{
     width: 300px;
     height: 100%;
     background-color: #fff;
+}
+
+#dialog_wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dialog{
+    max-width: 500px;
+    min-width: 300px;
+    margin: auto auto;
+    padding: 5em;
+    padding-left: 6em;
+    padding-right: 6em;
+    background-color: #fff;
+    text-align: center;
+}
+
+#search_wrapper{
+    margin-bottom: 2em;
+}
+
+#search_wrapper > input{
+    height: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#search_button_div{
+    height: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#search_button_div > img{
+    background-color: #2ca25f;
+    padding: 2px;
 }
