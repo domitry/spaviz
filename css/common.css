@@ -36,6 +36,7 @@ select, input{
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     z-index: 100;
+    display: none;
 }
 
 #viz_contents > svg{
@@ -66,7 +67,7 @@ select, input{
     width: 100%;
     height: 100%;
     z-index: 150;
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
 }
@@ -82,7 +83,7 @@ select, input{
     text-align: center;
 }
 
-#search_wrapper{
+.search_wrapper{
     margin-bottom: 2em;
 }
 
@@ -101,4 +102,8 @@ select, input{
 #search_button_div > img{
     background-color: #2ca25f;
     padding: 2px;
+}
+
+#simple_form, #advanced_form{
+    display: none;
 }

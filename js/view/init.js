@@ -66,10 +66,13 @@ module.exports = function(config_){
             .linkDistance(300)
             .gravity(0.0)
             .size([window.innerWidth, window.innerHeight]);
+    force.stop();
 
     var config = {
-        end_point: config_.end_point,
-        typename: config_.typename,
+        end_points: config_.end_points,
+	center_urls: config_.center_urls,
+	keyword: config_.keyword,
+	search_mode: config_.search_mode,
         float_g: float_g,
         force: force,
         nodes: [],
@@ -77,12 +80,18 @@ module.exports = function(config_){
     };
     
     _.extend(config, {
-        graph: require("./graph.js").init(config),
-        sparqls: require("./sparql.js").init(config),
-        colors: require("./colors.js").init(config)
-        //ui: require("./ui.js").init(config)
+        graph: require("./graph.js"),
+        sparqls: require("./sparql.js"),
+        colors: require("./colors.js")
+        //ui: require("./ui.js")
     });
 
-    force.nodes(config.nodes);
-    force.links(config.links);
+    config.graph.init(config);
+    config.sparqls.init(config).then(function(){
+	//config.graph.update();
+	//config.force.start();
+	config.colors.init(config);
+	force.nodes(config.nodes);
+	force.links(config.links);
+    });
 };

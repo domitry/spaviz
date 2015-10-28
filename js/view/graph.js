@@ -142,7 +142,7 @@ module.exports = {
                 .attr({r: 70, cx: 0, cy: 0})
                 .on("mousedown", function(d){
                     if(!d.unfolded && util.isURI(d.uri)){
-                        sparql_module.unfold(d, 10, function(){graph_module.update();});
+                        sparql_module.unfold(d.end_point, d, 10, function(){graph_module.update();});
                     }
                 })
                 .on("contextmenu", function(){

@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>SPA_VIZ</title>
+    <title>SPAVIZ</title>
     <link href="./css/common.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
@@ -16,16 +16,56 @@
       <div id="viz_bg"></div>
       <div id="dialog_wrapper">
 	<div class="dialog">
-	  <h1>Welcome to SPAVIZ</h1>
-	  <div id="search_wrapper">
-	    <input type="text">
-	    <div id="search_button_div">
-	      <img src="./images/search.png">
-	    </div>
+	  <h1>SPAVIZ</h1>
+	  <div id="simple_form">
+	    <form>
+	      <div class="search_wrapper">
+		<input type="text" id="simple_text" placeholder="e.g. Protein or A0AH42">
+		<div id="search_button_div">
+		  <img src="./images/search.png">
+		</div>
+	      </div>
+	    </form>
+	    <p>
+	      <small><a href="#simple"> begin tutorial </a> / <a href="#advanced" id="link_advanced"> advanced form </a></small>
+	    </p>
 	  </div>
-	  <p>
-	    <small><a href="#tutorial"> begin tutorial </a> / <a href="#advanced"> advanced form </a></small>
-	  </p>
+	  <div id="advanced_form">
+	    <form>
+	      <div class="search_wrapper">
+		<div style="display:table; border-spacing: 3px 10px;">
+		  <div style="display:table-row; text-align: left;">
+		    <div style="display:table-cell">search type</div>
+		    <div style="display:table-cell">
+			<input type="radio" style="width: 30px;" checked="checked">rdf:type
+			<input type="radio" style="width: 30px;">immediate
+		    </div>
+		  </div>
+		  <div style="display:table-row">
+		    <div style="display:table-cell">search word</div>
+		    <div style="display:table-cell">
+		      <input type="text" placeholder="e.g. Protein or A0AH42">
+		    </div>
+		  </div>
+		  <div style="display:table-row">
+		    <div style="display:table-cell">endpoint</div>
+		    <div style="display:table-cell">
+		      <select>
+			<option>unknown</option>
+			<option>nibb</option>
+			<option>uniplot</option>
+			<option>dbpedia</option>
+			<option>biomodels</option>
+		      </select>
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	    </form>
+	    <p>
+	      <small><a href="#advanced"> begin tutorial </a> / <a href="#simple" id="link_simple"> simple form </a></small>
+	    </p>
+	  </div>
 	</div>
     </div>
   </body>
